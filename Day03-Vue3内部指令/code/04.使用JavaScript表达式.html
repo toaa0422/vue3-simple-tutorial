@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- vue 实例要控制的 DOM 区域 -->
+    <div id="app">
+      <!-- 简单的四则运算，将结果渲染到当前标签中 -->
+      <p>{{number + 1}}</p>
+      <!-- 三元表达式：if-else条件判断的简写，返回三元运算的结果 -->
+      <p>{{ok ? 'True' : 'False'}}</p>
+      <!-- 调用方法处理字符串（必须要返回一个处理结果） -->
+      <p>{{message.split('').reverse().join('')}}</p>
+      <!-- 在动态绑定的属性值中进行字符串的动态拼接 -->
+      <p :id="'list-' + id">xxx</p>
+      <!-- 调用对象属性 -->
+      <p>{{user.name}}</p>
+    </div>
+
+    <!-- 导入 vue 脚本文件 -->
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+      // 创建 VM 实例对象
+      const vm = new Vue({
+        // 指定当前 VM 要控制的区域
+        el: '#app',
+        // 数据源
+        data: {
+          // 数值
+          number: 9,
+          // 布尔值
+          ok: false,
+          // 字符串
+          message: 'ABC',
+          // id 值
+          id: 3,
+          // 用户的信息对象
+          user: {
+            name: 'zs',
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

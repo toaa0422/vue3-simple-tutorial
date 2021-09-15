@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <!-- v-for 指令，用来辅助开发者基于一个数组来循环渲染相似的 UI 结构 -->
+        <!-- v-for 指令中的 item 项和 index 索引都是形参，可以根据需要进行重命名 -->
+        <li v-for="(user, i) in list">索引是：{{i}}，姓名是：{{user.name}}</li>
+      </ul>
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          // 用户列表的数据
+          list: [
+            { id: 1, name: 'zs' },
+            { id: 2, name: 'ls' },
+          ],
+        },
+      })
+    </script>
+  </body>
+</html>
